@@ -1,0 +1,7 @@
+.github/
+  workflow/
+    build.yml    <-- ini dia
+app/
+  ...
+build.gradle
+setting.gradle
