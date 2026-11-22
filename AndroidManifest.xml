@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cheatoverlay">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+
+    <application
+        android:allowBackup="false"
+        android:label="Clock Widget"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:supportsRtl="true">
+
+        <!-- Nama app di launcher: "Clock Widget" biar keliatan innocent -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Clock Widget">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CropActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Transparent"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"/>
+
+        <service
+            android:name=".OverlayService"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection"/>
+
+    </application>
+
+</manifest>
